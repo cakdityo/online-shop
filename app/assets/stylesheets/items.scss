@@ -1,3 +1,35 @@
 // Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.item-header {
+  text-align: center;
+  padding: 5px;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 5px;
+}
+
+.item-footer {
+  text-align: center;
+  padding: 5px;
+  border-top: 1px solid #eaeaea;
+  margin-top: 5px;
+}
+
+.item-actions {
+  padding: 10px;
+  border-top: 1px solid #eaeaea;
+}
+.item-meta-body {
+  padding-top: 30px;
+}
+.item-attribute {
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.line-right {
+  padding: 30px 50px 30px 0px;
+  border-right: 1px solid #ddd;
+}

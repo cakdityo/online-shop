@@ -1,29 +1,35 @@
-<%= form_for(@item) do |f| %>
+<%= form_for @item, html: {multipart: true, class: "form-horizontal"} do |f| %>
   <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
-
-      <ul>
-      <% @item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <%= render 'shared/errors', obj: @item %>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, class: "col-sm-2 col-sm-offset-1 control-label" %>
+    <div class="col-sm-6">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label :price, class: "col-sm-2 col-sm-offset-1 control-label" %>
+    <div class="col-sm-6">
+      <%= f.number_field :price, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
+  <div class="form-group">
+    <%= f.label :description, class: "col-sm-2 col-sm-offset-1 control-label" %>
+    <div class="col-sm-6">
+      <%= f.text_area :description, rows: 5, class: "form-control" %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.label :image, class: "col-sm-2 col-sm-offset-1 control-label" %>
+    <div class="col-sm-6">
+      <%= f.file_field :image, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <%= f.submit class: "btn btn-lg btn-primary" %>
+    </div>
   </div>
 <% end %>

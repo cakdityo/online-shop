@@ -11,5 +11,29 @@
  * file per style scope.
  *
  */
-@import "bootstrap-sprockets"
-@import "bootstrap"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "items";
+
+.navbar {
+  padding: 10px;
+}
+.navbar-default {
+  background-color: white;
+  border-right: 0px;
+  border-left: 0px;
+}
+
+.body-container {
+  min-height: 520px;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+.cakdityo {
+  font-weight: bold;
+  letter-spacing: -1px;
+}

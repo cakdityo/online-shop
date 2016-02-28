@@ -1,19 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-2 line-right">
+    <%= image_tag @item.image.url(:large), class: "img-responsive" %>
+    <div class="item-actions" align="center">
+      <%= link_to 'Edit', edit_item_path(@item), class: "btn btn-xs btn-primary" %>
+      <%= link_to 'Delete', item_path(@item), method: :delete, data: {confirm: "Are you sure ?"}, class: "btn btn-xs btn-danger" %>
+    </div>
+  </div>
+  <div class="col-sm-2 item-meta-body">
+    <span class="item-attribute">Name:</span>
+    <p><%= @item.name %></p>
+    <span class="item-attribute">Price:</span>
+    <p>Rp. <%= @item.price %></p>
+    <% if @item.description != '' %>
+      <span class="item-attribute">Description:</span>
+      <p><%= @item.description %></p>
+    <% end %>
+  </div>
+</div>

@@ -28,7 +28,8 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+        flash[:success] = "Item \"#{@item.name}\" has been successfully added!"
+        format.html { redirect_to @item}
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
@@ -42,7 +43,8 @@ class ItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+        flash[:success] = "Item \"#{@item.name}\" has been successfully updated!"
+        format.html { redirect_to @item }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
@@ -54,9 +56,11 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
+    @item.image = nil
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
+      flash[:danger] = "Item \"#{@item.name}\" has been successfully deleted!"
+      format.html { redirect_to items_url }
       format.json { head :no_content }
     end
   end
@@ -69,6 +73,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :description, :price)
+      params.require(:item).permit(:name, :description, :price, :image)
     end
 end
