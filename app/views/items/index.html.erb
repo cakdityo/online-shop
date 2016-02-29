@@ -7,7 +7,7 @@
         </div>
         <%= link_to (image_tag item.image.url(:medium)), item_path(item) %>
         <div class="item-footer" align="center">
-          <span class="badge">Rp. <%= item.price %></span>
+          Rp. <%= number_to_currency item.price, precision: 0, unit: "" %>
         </div>
         <div class="item-actions" align="center">
           <%= link_to "Edit", edit_item_path(item), class: "btn btn-xs btn-primary" %>

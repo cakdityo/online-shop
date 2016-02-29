@@ -3,19 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .item-header {
+  color: green;
   text-align: center;
   padding: 5px;
-  border-bottom: 1px solid #eaeaea;
-  margin-bottom: 5px;
+  border-bottom: 3px solid green;
 }
 
 .item-footer {
   text-align: center;
   padding: 5px;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #ddd;
   margin-top: 5px;
 }
-
+.item-price {
+  font-size: 1.3em;
+}
 .item-actions {
   padding: 10px;
   border-top: 1px solid #eaeaea;
@@ -25,7 +27,6 @@
 }
 .item-attribute {
   font-size: 1.5em;
-  font-weight: bold;
   letter-spacing: -1px;
 }
 

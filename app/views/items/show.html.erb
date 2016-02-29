@@ -10,7 +10,7 @@
     <span class="item-attribute">Name:</span>
     <p><%= @item.name %></p>
     <span class="item-attribute">Price:</span>
-    <p>Rp. <%= @item.price %></p>
+    <p>Rp. <%= number_to_currency @item.price, precision: 0, unit: "" %></p>
     <% if @item.description != '' %>
       <span class="item-attribute">Description:</span>
       <p><%= @item.description %></p>
