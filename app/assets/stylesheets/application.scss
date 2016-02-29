@@ -25,8 +25,16 @@
   border-bottom: 4px solid green;
 }
 
+.navbar-brand {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  font-weight: bold;
+  color: green;
+}
+
 .body-container {
   min-height: 520px;
+  margin-bottom: 20px;
 }
 
 .footer {

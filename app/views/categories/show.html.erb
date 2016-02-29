@@ -1,9 +1,15 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
-  <%= @category.name %>
+  Category:
+<span class="label label-success">
+  <%= @category.name %> (total: <%= @category.items.count %>)
+</span>
 </p>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<% if @category.items != [] %>
+  <%= render 'shared/index', obj: @category.items %>
+<% else %>
+    <div align="center">
+      <p>No items available in this category. <%= link_to "Create new item?", new_item_path %></p>
+      [ <%= link_to "Back to home", items_path %> ]
+    </div>
+<% end %>

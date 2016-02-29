@@ -1,0 +1,23 @@
+<div class="table-responsive col-sm-6 col-sm-offset-3">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th class="text-center">Name</th>
+      <th class="text-center">Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% Category.all.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+          <td align="center">
+            <%= link_to 'Show', category, class: "btn btn-xs btn-success" %>
+            <%= link_to 'Edit', edit_category_path(category), class: "btn btn-xs btn-primary" %>
+            <%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
